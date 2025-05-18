@@ -4,25 +4,12 @@ import cookieParser from 'cookie-parser'
 import dotenv from 'dotenv'
 import cors from 'cors'
 
-// const allowedOrigins = ['http://localhost:5173', 'http://192.168.1.102:5173', 'http://localhost://192.168.67.230:5173'];
-
 dotenv.config()
 cloudinaryConfig()
 const app = express()
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 app.use(cookieParser())
-// app.use(cors({
-//   origin: function (origin, callback) {
-//     if (!origin || allowedOrigins.includes(origin)) {
-//       callback(null, true);
-//     } else {
-//       callback(new Error('Not allowed by CORS'));
-//     }
-//   },
-//   credentials: true
-// }));
-
 app.use(cors())
 app.get("/", (_, res) => {
     res.send("health check server")

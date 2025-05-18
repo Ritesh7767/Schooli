@@ -14,7 +14,7 @@ const UserCard = ({user}: {user: StudentInterface | TeacherInterface}) => {
     const {user: currentUser} = useUser()
     const handleClick = () => {
 
-        if (currentUser?.status != "Admin") return 
+        if (currentUser?.status == "student") return 
         localStorage.setItem("details", JSON.stringify(user))
         setDetails(user)
         setSearchView(false)
@@ -48,7 +48,7 @@ const UserCard = ({user}: {user: StudentInterface | TeacherInterface}) => {
     }
 
   return (
-    <div onClick={handleClick} className='flex shadow-xl bg-white justify-center items-center gap-5 p-4 rounded-2xl'>
+    <div onClick={handleClick} className='flex cursor-pointer shadow-xl bg-white justify-center items-center gap-5 p-4 rounded-2xl'>
         <div className=''>
             <img className='h-20 w-20 rounded-full object-cover' src={user.profile ? user.profile : user.gender == "male" ? "https://www.bing.com/th?id=OIP.31F7heyNrbiTmHBz1Jc1LQHaH3&w=169&h=185&c=8&rs=1&qlt=90&o=6&dpr=1.5&pid=3.1&rm=2" : "https://th.bing.com/th/id/OIP.Q95pQRcQPSO-Z1WbGRzD7wHaHX?rs=1&pid=ImgDetMain"} alt="" />
         </div>

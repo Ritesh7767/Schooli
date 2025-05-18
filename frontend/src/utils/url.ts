@@ -1,3 +1,1 @@
-export const server = "http://192.168.110.230:3000"
-// 
-//
+export const server = "https://schoolibackend.onrender.com"

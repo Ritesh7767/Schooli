@@ -1,4 +1,3 @@
-import { IoSearch } from "react-icons/io5";
 import { IoNotificationsSharp } from "react-icons/io5";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { useTranslate } from "../context/TranslateProvider";
@@ -14,9 +13,12 @@ const Navbar = () => {
         <nav className='flex items-center justify-between relative md:pl-7 md:pr-7 gap-2 h-14 p-2 shadow-lg mb-3'>
             <div className="flex items-center gap-3 w-3/5">
                 <h1 onClick={() => setTranslate(prev => !prev)} id="logo" className="active:bg-[#8C4AF2] active:text-white flex items-center justify-center rounded-md p-2 font-extrabold text-2xl text-purple-900 font-serif">Schoooli</h1>
-                <div className="hidden md:block">
+                {
+                    user?.status != "student" &&
+                    <div className="hidden md:block">
                     <Input/> 
                 </div>
+                }
             </div>
             <div className="flex items-center gap-4">
                 <span className="text-purple-700 text-xl"><IoNotificationsSharp/></span>

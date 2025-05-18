@@ -42,13 +42,13 @@ const Login = () => {
     }
 
   return (
-    <div className='absolute border text-purple-900 bg-[url(./login.jpg)] bg-no-repeat bg-center bg-cover bg-opacity-55 border-black w-full h-full flex flex-col justify-center items-center'>
+    <div className='absolute border text-purple-900 bg-[url(https://img.freepik.com/premium-photo/colorful-school-supplies-wooden-background_488220-23037.jpg)] bg-no-repeat bg-center bg-cover bg-opacity-55 border-black w-full h-full flex flex-col justify-center items-center'>
         <h1 className="font-bold text-3xl text-white">Welcome to <span className="text-purple-500">Schooli</span></h1>
         <div className="border-purple-900 rounded-xl shadow-2xl p-12 bg-opacity-50 bg-white">
             <h1 className="font-semibold">Hello User,.... {greeting} </h1>
             <p className="font-semibold italic text-xs" >Please enter your credentials</p>
-            <form onSubmit={handleSubmit} className="p-12 rounded-lg flex flex-col gap-3">
-                <div>
+            <form onSubmit={handleSubmit} className="p-12 rounded-lg flex flex-col justify-center items-center gap-3">
+                <div className="">
                     <label className="font-bold" htmlFor="">Username</label><br />
                     <div className="relative">
                         <span className="absolute text-xl top-1/2 left-2 transform -translate-y-1/2">
@@ -67,8 +67,10 @@ const Login = () => {
                     </div>
                 </div>
                 <br />
-                <input onSubmit={handleSubmit} type="submit" className={`rounded-3xl bg-purple-400 text-white font-bold border ${userCred.username.length > 5 && userCred.password.length > 5 && "bg-purple-900 active:border-purple-800 active:bg-white active:text-black"} p-2`}/><br />
-                {error && <DisplayError errMessage={error} />}
+                <input onSubmit={handleSubmit} type="submit" className={`rounded-3xl px-20 bg-purple-400 text-white font-bold border ${userCred.username.length > 5 && userCred.password.length > 5 && "bg-purple-900 active:border-purple-800 active:bg-white active:text-black"} p-2`}/><br />
+                <div className="">
+                    {error && <DisplayError errMessage={error} />}
+                </div>
             </form>
         </div>
     </div>

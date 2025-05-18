@@ -23,7 +23,6 @@ export const studentValidation = zod.object({
     birthCertificate: zod.string().optional(),
     leavingCertificate: zod.string().optional(),
 })
-
 export const studentInfoValidation = studentValidation.pick({
     username: true,
     password: true,
